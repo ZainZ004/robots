@@ -52,10 +52,7 @@ void SubRoutine_2( )
     SubRoutine_3 ();		
     
     WER_next();		
-    SubRoutine_4 ();		
-    
-    WER_next();
-    SubRoutine_5 ();		
+    SubRoutine_4 ();			
 }
 
 /*1lf*/
@@ -73,7 +70,7 @@ void SubRoutine_3( )
     WER_LineWay_T(%gi_1,0,0,1,0.800);
     WER_LineWay_T(%gi_1,0,0,1,0.800);
     wait( 0.300000 );
-    gi_1=-26
+    gi_1=-26;
     WER_SetMotor(%gi_1,%gi_1,0.500);
     PO16_Move(1,512,682);
     wait( 0.500000 );
@@ -186,6 +183,7 @@ void task_4()
     gi_1=40;
     gi_2=40;
 }
+
 
 
 //2013DUODUOuse-testA0905

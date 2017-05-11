@@ -1,0 +1,26 @@
+#include ASEIO.h
+int speed=0;
+int speedchange=0;
+void main_2();
+void report();
+
+void main_2()
+{
+    
+}
+
+void report()
+{
+    
+}
+
+void main()
+{
+    
+}
+
+void task_1()
+{
+    
+}
+//2013DUODUOProgramAA0905
