@@ -1,17 +1,39 @@
-#include ASEIO.h
+#include "ASEIO.h"
 int speed=0;
 int speedchange=0;
-void main_2();
-void report();
+int roundL=0;
+int roundR=0;
+int motoSL=0;
+int motoSR=0;
 
 void main_2()
 {
     
 }
 
-void report()
+void report_speed()
 {
-    
+    while(1)
+    {
+        if(roundL==1)
+        {
+            motoSL=speed-speedchange;
+            motoSR=speed;
+        }
+        else
+        {
+            if(roundR==1)
+            {
+                motoSL=speed;
+                motoSR=speed-speedchange;
+            }
+            else
+            {
+                motoSL=speed;
+                motoSR=speed;
+            }
+        }
+    }
 }
 
 void main()
@@ -23,4 +45,6 @@ void task_1()
 {
     
 }
+
+
 //2013DUODUOProgramAA0905
