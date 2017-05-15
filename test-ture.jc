@@ -5,10 +5,33 @@ int roundL=0;
 int roundR=0;
 int motoSL=0;
 int motoSR=0;
+int system2=0;
+int setting_system2=0;
+int AI_1=0;
+int AI_2=0;
+int AI_3=0;
+int AI_4=0;
+int AI_5=0;
+int AI_6=0;
+int AI_7=0;
+int AI_8=0;
+int AI_9=0;
+int AI_10=0;
+int AI_11=0;
+int time=0;
+void chose();
 
 void main_2()
 {
-    
+    while(setting_system2==1)
+    {
+        /*check moto*/
+        SetMoto(0,speed);
+        SetMoto(1,speed);
+        /*check  AI*/
+
+    }
+
 }
 
 void report_speed()
@@ -38,13 +61,35 @@ void report_speed()
 
 void main()
 {
-    
+    resettime();
+    while(time==0)
+    {
+    SetMoto(0,motoSL);
+    SetMoto(1,motoSR);
+    }
 }
 
-void task_1()
+void report_AI()
 {
-    
+    while(1)
+    {
+        AI_1=AI(1);
+        AI_2=AI(2);
+        AI_3=AI(3);
+        AI_4=AI(4);
+        AI_5=AI(5);
+        AI_6=AI(6);
+        AI_7=AI(7);
+        AI_8=AI(8);
+        AI_9=AI(9);
+        AI_10=AI(10);
+        AI_11=AI(11);
+    }
 }
 
+void report_time()
+{
+    time=seconds() ;
+}
 
 //2013DUODUOProgramAA0905

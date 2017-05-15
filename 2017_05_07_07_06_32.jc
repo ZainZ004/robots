@@ -1,0 +1,29 @@
+#include "ASEIO.h"
+
+
+
+int btn_1=0;
+int gi_1=0;
+int ma_1=0;
+
+void main()
+{
+    while(1)
+    {
+        btn_1 = Get_Button();
+        if(btn_1 == 1)
+        {
+        }
+        else
+        {
+            btn_1 = Get_BtnRight();
+            if(gi_1 == 1)
+            {
+            }
+        }
+    }
+    ma_1 = AI(0);		
+
+}
+
+//2013DUODUOProgramAA0905
