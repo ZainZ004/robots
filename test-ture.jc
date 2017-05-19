@@ -39,24 +39,27 @@ void main_2()
               {
               if(AI_4!=0)
               {
+			  if(AI_5!=0)
+			  {
 
+			  }
               }
               else
               {
                 break;
-                Printf("Error/nAI_4/n/n/n/n/n/n")
+                Printf("Error/nAI_4/n/n/n/n/n/n");
               }
               }
               else
               {
                 break;
-                Printf("Error/nAI_3/n/n/n/n/n/n")
+                Printf("Error/nAI_3/n/n/n/n/n/n");
               }
             }
             else
             {
               break;
-              Printf("error/nAI_2/n/n/n/n/n/n")
+              Printf("error/nAI_2/n/n/n/n/n/n");
             }
             }
             else
