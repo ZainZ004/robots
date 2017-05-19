@@ -183,9 +183,10 @@ void report_time()
 {
     time=seconds() ;
 }
-
-void WER_LineWay_C(int N,int Crossing,int speed,int Lcut,int Rcut,int stop,float time)
+/*N how many cossing need to cross;crossing just is crossing;speed just is speed;Lcut is speedchange about left;Rcut is speedcut about right;stop is running over to stop;time is time about go out crossing time*/
+void WER_LineWay_CC(int N,int Crossing,int speed,int Lcut,int Rcut,int stop,float time)
 {
+    (
     int F1,F2,F3,F4,F5,F6,F7;
     int SpeedL, SpeedR,SpeedA;
     int i;
@@ -272,6 +273,7 @@ void WER_LineWay_C(int N,int Crossing,int speed,int Lcut,int Rcut,int stop,float
     }
     if(stop==1) {WER_SetMotor(0,0,0);}
 }
+
 
 
 
