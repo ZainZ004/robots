@@ -29,8 +29,43 @@ void main_2()
         SetMoto(0,speed);
         SetMoto(1,speed);
         /*check  AI*/
+        while(1)
+        {
+          if(AI_1!=0)
+          {
+            if(AI_2!=0)
+            {
+              if(AI_3!=0)
+              {
+              if(AI_4!=0)
+              {
 
-    }
+              }
+              else
+              {
+                break;
+                Printf("Error/nAI_4/n/n/n/n/n/n")
+              }
+              }
+              else
+              {
+                break;
+                Printf("Error/nAI_3/n/n/n/n/n/n")
+              }
+            }
+            else
+            {
+              break;
+              Printf("error/nAI_2/n/n/n/n/n/n")
+            }
+            }
+            else
+            {
+              break;
+              Printf("error/nAI_1/n/n/n/n/n/n);
+            }
+          }
+      }
 
 }
 
@@ -91,5 +126,6 @@ void report_time()
 {
     time=seconds() ;
 }
+
 
 //2013DUODUOProgramAA0905
