@@ -37,40 +37,94 @@ void main_2()
             {
               if(AI_3!=0)
               {
-              if(AI_4!=0)
-              {
-			  if(AI_5!=0)
-			  {
-
-			  }
+				if(AI_4!=0)
+				{
+					if(AI_5!=0)
+					{
+                        if(AI_6!=0)
+                        {
+                            if(AI_7!=0)
+                            {
+                                if(AI_8!=0)
+                                {
+                                    if(AI_9!=0)
+                                    {
+                                        if(AI_10!=0)
+                                        {
+                                            if(AI_11!=0)
+                                            {
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                break;
+                                                printf("ERROR/nAI_11n/n/n/n/n/n");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            break;
+                                             printf("ERROR/nAI_10/n/n/n/n/n/n");
+                                        }
+                                    }
+                                    else
+                                    {
+                                     break;
+                                    printf("ERROR/nAI_9/n/n/n/n/n/n");
+									}
+                                }
+                                else
+                                {
+                                 break;
+                                printf("ERROR/nAI_8/n/n/n/n/n/n");
+								}
+                            }   
+                            else
+                            {
+                                break;
+                                printf("ERROR/nAI_7/n/n/n/n/n/n");
+                            }
+                        }
+                        else
+                        {
+                            break;
+                            printf("ERROR/nAI_6/n/n/n/n/n/n");
+                        }
+                     }
+                      else
+                      {
+                        break;
+                        printf("ERROR/nAI_5/n/n/n/n/n/n");
+                        }
+					}
+                    else
+                    {
+                        break;
+                         printf("ERROR/nAI_4/n/n/n/n/n/n");
+                    }
               }
               else
               {
                 break;
-                Printf("Error/nAI_4/n/n/n/n/n/n");
+                printf("ERROR/nAI_3/n/n/n/n/n/n");
               }
               }
               else
               {
                 break;
-                Printf("Error/nAI_3/n/n/n/n/n/n");
+                printf("ERROR/nAI_2/n/n/n/n/n/n");
               }
             }
             else
             {
               break;
-              Printf("error/nAI_2/n/n/n/n/n/n");
-            }
-            }
-            else
-            {
-              break;
-              Printf("error/nAI_1/n/n/n/n/n/n);
+              printf("ERROR/nAI_1/n/n/n/n/n/n");
             }
           }
-      }
+          /*check over*/
+          }
 
-}
+      }
 
 void report_speed()
 {
@@ -100,7 +154,7 @@ void report_speed()
 void main()
 {
     resettime();
-    while(time==0)
+    while(time!=0)
     {
     SetMoto(0,motoSL);
     SetMoto(1,motoSR);
@@ -129,6 +183,96 @@ void report_time()
 {
     time=seconds() ;
 }
+
+void WER_LineWay_C(int N,int Crossing,int speed,int Lcut,int Rcut,int stop,float time)
+{
+    int F1,F2,F3,F4,F5,F6,F7;
+    int SpeedL, SpeedR,SpeedA;
+    int i;
+    SpeedL=speed-Lcut;
+	SpeedR=speed-Rcut;
+    SpeedA=speed*0.15;
+    WER_SetMotor(SpeedL,SpeedR,0);
+    for(i=0;i< N ;i++)
+    {
+		if(WER_line_colour==0)
+		{
+            F1=ReadEEPROM(10);
+			F2=ReadEEPROM(11);
+			F3=ReadEEPROM(12);
+			F4=ReadEEPROM(13);
+			F5=ReadEEPROM(14);
+			F6=ReadEEPROM(15);
+			F7=ReadEEPROM(16);
+			if(Crossing==0)
+			{
+				while(AI(WER_Floor_IO_1)<F1)
+				{
+					if         ( AI(WER_Floor_IO_4)>F4)													WER_SetMotor(SpeedL, SpeedR, 0);
+					else if((AI(WER_Floor_IO_6)>F6)&&(WER_Floor_Quantity==7))	WER_SetMotor(SpeedL,		 -40, 0);
+					else if((AI(WER_Floor_IO_2)>F2)&&(WER_Floor_Quantity==7))	WER_SetMotor(	      -40, SpeedR, 0);
+                    else if( AI(WER_Floor_IO_5)>F5)														WER_SetMotor(SpeedL,SpeedA, 0);
+                    else if( AI(WER_Floor_IO_3)>F3)														WER_SetMotor(SpeedA,SpeedR, 0);
+                    else{}
+				}
+                while(AI(WER_Floor_IO_1)>F1) WER_SetMotor(SpeedL,SpeedR,0);
+			}
+			else
+			{
+				while(AI(WER_Floor_IO_7)<F7)
+				{
+					if         ( AI(WER_Floor_IO_4)>F4)													WER_SetMotor(SpeedL,SpeedR,0);
+                    else if((AI(WER_Floor_IO_2)>F2)&&(WER_Floor_Quantity==7))	WER_SetMotor(	   	  -40,SpeedR,0);
+					else if((AI(WER_Floor_IO_6)>F6)&&(WER_Floor_Quantity==7))	WER_SetMotor(SpeedL,		-40,0);
+					else if( AI(WER_Floor_IO_3)>F3)														WER_SetMotor(SpeedA,SpeedR,0);
+					else if( AI(WER_Floor_IO_5)>F5)														WER_SetMotor(SpeedL,SpeedA,0);
+					else{}
+				}
+                while(AI(WER_Floor_IO_7)>F7) WER_SetMotor(SpeedL,SpeedR,0);
+			}
+            wait(time);
+        }
+		else
+		{
+			F1=ReadEEPROM(17);
+			F2=ReadEEPROM(18);
+			F3=ReadEEPROM(19);
+			F4=ReadEEPROM(20);
+			F5=ReadEEPROM(21);
+			F6=ReadEEPROM(22);
+			F7=ReadEEPROM(23);
+			if(Crossing==0)
+			{
+				while(AI(WER_Floor_IO_1)>F1)
+				{
+                    if         (AI(WER_Floor_IO_4)<F4)														WER_SetMotor(SpeedL,SpeedR,0);
+                    else if((AI(WER_Floor_IO_6)<F6)&&(WER_Floor_Quantity==7))	WER_SetMotor(SpeedL,		-40,0);
+					else if((AI(WER_Floor_IO_2)<F2)&&(WER_Floor_Quantity==7))	WER_SetMotor(	      -40,SpeedR,0);
+                    else if(AI(WER_Floor_IO_5)<F5)														WER_SetMotor(SpeedL,SpeedA,0);
+                    else if(AI(WER_Floor_IO_3)<F3)														WER_SetMotor(SpeedA,SpeedR,0);
+                    else{}
+				}
+                while(AI(WER_Floor_IO_1)<F1) WER_SetMotor(SpeedL,SpeedR,0);
+			}
+			else
+			{
+				while(AI(WER_Floor_IO_7)>F7)
+				{
+                    if         (AI(WER_Floor_IO_4)<F4)														WER_SetMotor(SpeedL,SpeedR,0);
+                    else if((AI(WER_Floor_IO_2)<F2)&&(WER_Floor_Quantity==7))	WER_SetMotor(	   	  -40,SpeedR,0);
+                    else if((AI(WER_Floor_IO_6)<F6)&&(WER_Floor_Quantity==7))	WER_SetMotor(SpeedL,		-40,0);
+                    else if(AI(WER_Floor_IO_3)<F3)														WER_SetMotor(SpeedA,SpeedR,0);
+                    else if(AI(WER_Floor_IO_5)<F5)														WER_SetMotor(SpeedL,SpeedA,0);
+					else{}
+				}
+                while(AI(WER_Floor_IO_7)<F7) WER_SetMotor(SpeedL,SpeedR,0);
+			}
+            wait(time);
+		}
+    }
+    if(stop==1) {WER_SetMotor(0,0,0);}
+}
+
 
 
 //2013DUODUOProgramAA0905
