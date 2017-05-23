@@ -209,12 +209,29 @@ void WER_LineWay_CC(int N,int Crossing,int speed,int Lcut,int Rcut,int stop,floa
 			{
 				while(AI(WER_Floor_IO_1)<F1)
 				{
-					if         ( AI(WER_Floor_IO_4)>F4)													WER_SetMotor(SpeedL, SpeedR, 0);
-					else if((AI(WER_Floor_IO_6)>F6)&&(WER_Floor_Quantity==7))	WER_SetMotor(SpeedL,		 -40, 0);
-					else if((AI(WER_Floor_IO_2)>F2)&&(WER_Floor_Quantity==7))	WER_SetMotor(	      -40, SpeedR, 0);
-                    else if( AI(WER_Floor_IO_5)>F5)														WER_SetMotor(SpeedL,SpeedA, 0);
-                    else if( AI(WER_Floor_IO_3)>F3)														WER_SetMotor(SpeedA,SpeedR, 0);
-                    else{}
+					if         ( AI(WER_Floor_IO_4)>F4)
+                    WER_SetMotor(SpeedL, SpeedR, 0);
+					else 
+                    if((AI(WER_Floor_IO_6)>F6)&&(WER_Floor_Quantity==7))	
+                    WER_SetMotor(SpeedL,		 -40, 0);
+					else 
+                    if((AI(WER_Floor_IO_2)>F2)&&(WER_Floor_Quantity==7))	
+                    WER_SetMotor(	      -40, SpeedR, 0);
+                    else 
+                    {
+                    if( AI(WER_Floor_IO_5)>F5)														
+                    {
+                    WER_SetMotor(SpeedL,SpeedA, 0);
+                    }
+                    else
+                    { 
+                    if( AI(WER_Floor_IO_3)>F3)
+                    {														
+                    }
+                    else
+                    {
+                        WER_SetMotor(SpeedA,SpeedR, 0);
+                     }
 				}
                 while(AI(WER_Floor_IO_1)>F1) WER_SetMotor(SpeedL,SpeedR,0);
 			}
